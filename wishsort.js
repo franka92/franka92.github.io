@@ -19,7 +19,8 @@ var WishSort = {
       if (!isNaN(itemIndex)){
         item.style = "border: 1px solid red";
         grid = WishSort.findRow(parseInt(itemIndex / 4))
-        grid.append(sorted[item])
+        if(grid)
+          grid.append(sorted[item])
       }
     }
   },
