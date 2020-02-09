@@ -10,7 +10,8 @@ var WishSort = {
     var sorted = Array.prototype.slice.call(items).sort(function(prodA, prodB){
       var priceA = WishSort.priceToInteger(prodA.querySelectorAll("[class*=FeedTile__ActualPrice]")[0].innerText);
       var priceB = WishSort.priceToInteger(prodB.querySelectorAll("[class*=FeedTile__ActualPrice]")[0].innerText);
-      return ((priceA < priceB) ? -1 : ((priceA > priceB) ? 1 : 0));
+      return priceA - priceB;
+      //return ((priceA < priceB) ? -1 : ((priceA > priceB) ? 1 : 0));
     });
 
     for (var item in sorted) {
